@@ -76,9 +76,23 @@ void RestarMatriz(Matriz &res,const Matriz &m1,const Matriz &m2)
 }
 void MultiplicarMatriz(Matriz &res,const Matriz &m1,const Matriz &m2)
 {
+
+	double comodin;	
+	for(int i=0;i<FilasMatriz(m1);i++)
+		for(int j=0;j<columnasMatriz(m2);j++){
+			comodin=0;
+			for(int k=0;k<columnasMatriz(m1);k++){
+				comodin=GetMatriz(res,i,j)+GetMatriz(m1,i,k)*GetMatriz(m2,k,j);	
+				SetMatriz(res,i,j,comodin);
+			}
+		}
+	
 }
 void Transpuesta(Matriz &res,const Matriz &m)
 {
+	for(int i=0;i<FilasMatriz(m);i++)
+		for(int j=0;j<columnasMatriz(m);j++)
+			SetMatriz(res,i,j,GetMatriz(m,j,i));
 }
 //**************************FUNCION MOSTRAR MATRIZ******************************//
 //Aunque no se pida, añadida por comodidad
