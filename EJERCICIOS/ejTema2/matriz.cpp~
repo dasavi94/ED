@@ -1,12 +1,12 @@
-/**************Dado el dato MATRIZ*****************
-**IMPLEMENTAR LAS FUNCIONES:***********************
-**-void CrearMatriz(Matriz &m,int f,int c)*********
-**-int FilasMatriz(const Matriz &m)****************
-**-int columnasMatriz(const Matriz &m)*************
-**-void SetMatriz(Matriz &m,int i,int j,double v)**
-**-double GetMatriz(const Matriz &m,int i,int j)***
-**-void DestruirMatriz(Matriz &m)******************
-***************************************************/
+/*Dado el dato MATRIZ
+IMPLEMENTAR LAS FUNCIONES:
+-void CrearMatriz(Matriz &m,int f,int c)
+-int FilasMatriz(const Matriz &m)
+-int columnasMatriz(const Matriz &m)
+-void SetMatriz(Matriz &m,int i,int j,double v)
+-double GetMatriz(const Matriz &m,int i,int j)
+-void DestruirMatriz(Matriz &m)
+*/
 //Definimos nuevo tipo de dato llamado MATRIZ
 struct Matriz{
 	double **datos;
