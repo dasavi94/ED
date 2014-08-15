@@ -8,6 +8,8 @@
 **-void DestruirMatriz(Matriz &m)******************
 ***************************************************/
 //Definimos nuevo tipo de dato llamado MATRIZ
+#include<iostream>
+using namespace std;
 struct Matriz{
 	double **datos;
 	int filas,columnas;
@@ -49,4 +51,25 @@ void DestruirMatriz(Matriz &m)
 	for (int i =0;i<m.filas;i++)
 		delete [] m.datos[i] ;
 	delete [] m.datos;
+}
+//**************************FUNCIONES EJ2 en base a las funciones anteriores******************************//
+void SumarMatriz(Matriz &res,const Matriz &m1,const Matriz &m2)
+{
+	double comodin=0;
+	for(int i=0;i<FilasMatriz(m1);i++)
+		for(int j=0;j<columnasMatriz(m1);j++){
+			comodin=GetMatriz(m1,i,j)+GetMatriz(m2,i,j);
+			SetMatriz(res,i,j,comodin);
+		}
+
+			
+}
+void RestarMatriz(Matriz &res,const Matriz &m1,const Matriz &m2)
+{
+}
+void MultiplicarMatriz(Matriz &res,const Matriz &m1,const Matriz &m2)
+{
+}
+void Transpuesta(Matriz &res,const Matriz &m)
+{
 }
