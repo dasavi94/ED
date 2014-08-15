@@ -66,10 +66,30 @@ void SumarMatriz(Matriz &res,const Matriz &m1,const Matriz &m2)
 }
 void RestarMatriz(Matriz &res,const Matriz &m1,const Matriz &m2)
 {
+	double comodin=0;
+	for(int i=0;i<FilasMatriz(m1);i++)
+		for(int j=0;j<columnasMatriz(m1);j++)
+		{
+			comodin=GetMatriz(m1,i,j)-GetMatriz(m2,i,j);
+			SetMatriz(res,i,j,comodin);
+		}
 }
 void MultiplicarMatriz(Matriz &res,const Matriz &m1,const Matriz &m2)
 {
 }
 void Transpuesta(Matriz &res,const Matriz &m)
 {
+}
+//**************************FUNCION MOSTRAR MATRIZ******************************//
+//Aunque no se pida, añadida por comodidad
+void mostrarMatriz(const Matriz &m)
+{
+
+	cout<<"----------------------------------------------------"<<endl;
+	for(int i=0;i<FilasMatriz(m);i++){
+		for(int j=0;j<columnasMatriz(m);j++){
+			cout<<"["<<GetMatriz(m,i,j)<<"]";
+		}
+		cout<<endl;
+	}	
 }
