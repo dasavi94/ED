@@ -1,5 +1,7 @@
 #ifndef VECTORDINAMICO_H
 #define VECTORDINAMICO_H
+
+#include <iostream>
 class VectorDinamico{
 
 	private:
@@ -14,8 +16,9 @@ class VectorDinamico{
 		float get(int i) const;
 		void set(int i,float v);
 		void resize(int n);
-		VectorDinamico &operator=(const VectorDinamico &original);
+		VectorDinamico operator=(const VectorDinamico &original);
 	private:
 		void reservarMemoria(int n);
+		void destruirMemoria();
 };
 #endif

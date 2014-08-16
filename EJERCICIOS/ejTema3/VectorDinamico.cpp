@@ -1,4 +1,5 @@
 #include "VectorDinamico.h"
+using namespace std;
 VectorDinamico::VectorDinamico(){
 
 	reservarMemoria(1);
@@ -27,14 +28,22 @@ void VectorDinamico::set(int i,float v){
 }
 void VectorDinamico::resize(int n){
 
-	if(n>tamanio){
+	
 		float *comodin=new float[n];
-		for(int i=0;i<tamanio;i++)
-			comodin[i]=datos[i];
+			if(n>tamanio) for(int i=0;i<tamanio;i++) comodin[i]=datos[i];
+			if(n<tamanio) for(int i=0;i<n;i++) comodin[i]=datos[i];
 		destruirMemoria();
 		reservarMemoria(n);
 		datos=comodin;
-		}
+
+}
+VectorDinamico & VectorDinamico::operator=(const VectorDinamico &original)
+{
+	resize(original.tamanio);
+	for(int i=0;i<original.tamanio;i++){
+		datos[i]=original.datos[i];
+	}
+	return *this;
 }
 //<-------------------__FUNCIONES PRIVADAS__---------------------->
 void VectorDinamico::reservarMemoria(int n){

@@ -1,5 +1,7 @@
 #ifndef VECTORDINAMICO_H
 #define VECTORDINAMICO_H
+
+#include <iostream>
 class VectorDinamico{
 
 	private:
