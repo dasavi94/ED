@@ -81,10 +81,18 @@ const diccionario::entrada & diccionario::find( const string & s) const{
  @todo implementa esta función
 */
 int & diccionario::operator[](const string & s) {
-
-	entrada e=this->find(s);
-
-	return e.second;
+ bool encontrado = false;
+  int i;
+  for (i=1;i<dic.size() && ! encontrado ;  ){
+    if (dic[i].first == s)
+      encontrado = true;
+    else i++;
+  }
+  if (!encontrado) {
+       dic.push_back(entrada(s,0));
+       i = dic.size()-1;
+  }
+  return dic[i].second;
 }
 	
 
