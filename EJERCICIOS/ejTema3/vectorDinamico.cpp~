@@ -1,0 +1,5 @@
+
+VectorDinamico::VectorDinamico(){
+
+	datos=new float [1];
+}
