@@ -27,6 +27,7 @@ class Pila{
 	private:
 		void reservarMemoria(int n);
 		void quitarMemoria();
+		void resize(int n);
 };
 //<--------------------------METODOS PÚBLICOS----------------------------->
 template <class T>
@@ -49,11 +50,16 @@ template <class T>
 void Pila<T>::push(const T &d){
 
 	if (ocupados+1==tamanio){
-		T *comodin=datos;
+		T *comodin;
+		comodin=new T [ocupados];
+		for(int i=0;i<ocupados;i++)
+			comodin[i]=datos[i];
+		//cout<<"Vamos con la reserva en el push:"<<d<<endl;
+		resize(tamanio*2);
+		
 		int com1=tamanio;
 		int com2=ocupados;
-		//cout<<"Vamos con la reserva en el push:"<<d<<endl;
-		reservarMemoria(com1*2);
+
 		//cout<<"Reservada"<<endl;
 		datos=comodin;
 		//cout<<"Ponemos los datos en el array"<<endl;
@@ -88,7 +94,10 @@ int Pila<T>::getOcupados(){
 	return ocupados;
 }
 //<-------------------------METODOS PRIVADOS------------------------------>
-
+template <class T>
+void Pila<T>::resize(int n){
+	reservarMemoria(n);
+}
 template <class T>
 void Pila<T>::reservarMemoria(int n){
 	datos=new T [n];
@@ -97,5 +106,7 @@ void Pila<T>::reservarMemoria(int n){
 }
 template <class T>
 void Pila<T>::quitarMemoria(){
-	delete datos;
+
+	delete [] datos;
+	//delete [] datos;
 }
