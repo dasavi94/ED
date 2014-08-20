@@ -55,11 +55,11 @@ void Pila<T>::push(const T &d){
 		resize(tamanio*2);
 
 	}
-	//cout<<"introducimos los datos en el array, y el tamaño del array es="<<tamanio<<" -->y el ocupado="<<ocupados<<endl;
+	cout<<"introducimos los datos en el array, y el tamaño del array es="<<tamanio<<" -->y el ocupado="<<ocupados<<endl;
 
 	datos[ocupados]=d;
 	ocupados++;
-	//cout<<"Introducido el dato:"<<d<<"<<"<<ocupados<<"<<"<<tamanio<<"xi:  "<<datos[ocupados-1]<<endl;
+	cout<<"Introducido el dato:"<<d<<"<<"<<ocupados<<"<<"<<tamanio<<"xi:  "<<datos[ocupados-1]<<endl;
 }
 template <class T>
 void Pila<T>::del(){

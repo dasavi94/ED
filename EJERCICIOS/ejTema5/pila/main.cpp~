@@ -23,10 +23,10 @@ int main()
 	cout<<"OCUPADOS i,f,c,s:"<<i.getOcupados()<<" "<<f.getOcupados()<<" "<<c.getOcupados()<<" "<<s.getOcupados()<<endl;
 
 	
-	while (!i.vacia()) cout<<"Ocupado "<<i.getOcupados()<<" "<<i.get()<<endl;
-	while (!f.vacia()) cout<<"Ocupado "<<f.getOcupados()<<" "<<f.get()<<endl;
-	while (!c.vacia()) cout<<"Ocupado "<<c.getOcupados()<<" "<<c.get()<<endl;
-	while (!s.vacia()) cout<<"Ocupado "<<s.getOcupados()<<" "<<s.get()<<endl;	
+	while (!i.vacia()) cout<<"Ocupado"<<i.getOcupados()<<" "<<i.get()<<endl;
+	while (!f.vacia()) cout<<"Ocupado"<<f.getOcupados()<<" "<<f.get()<<endl;
+	while (!c.vacia()) cout<<"Ocupado"<<c.getOcupados()<<" "<<c.get()<<endl;
+	while (!s.vacia()) cout<<"Ocupado"<<s.getOcupados()<<" "<<s.get()<<endl;	
 	
 	cout<<i.vacia()<<"\n"<<f.vacia()<<"\n"<<c.vacia()<<endl;
 	cout<<i.getNull()<<"\n"<<f.getNull()<<"\n"<<c.getNull()<<endl;
